@@ -1,0 +1,8 @@
+/*
+*/
+//
+echo
+print
+var_dump
+array
+for
