@@ -10,7 +10,7 @@
 // initialisations de variables
 $var1 = 5;
 $var2 = 8;
-$var3 = mt_rand(0,1);
+$var3 = mt_rand(0,6);
 $var4 = mt_rand(1,10);
 $var5 = "Courage!";
 $var6 = "vous avez presque fini";
@@ -39,6 +39,11 @@ $var8 = true;
 ?>
 <h2>cinquos</h2>
 <p>Affichez ici le contenu de $var3 et $var4 en respectant le format suivant:<br> $var3 vaut X et $var4 vaut X. Le total des 2 fait X. La multiplication des 2 fait X </p>
+<?php
+
+?>
+<h2>sextos</h2>
+<p>si ($var2+$var3) est plus grand que ($var2+$var4) ALORS on affiche "YES" SINON on affiche "NO"</p>
 <?php
 
 ?>
