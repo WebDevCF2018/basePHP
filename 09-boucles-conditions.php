@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Exercices boucles et conditions</title>
+    <title>Exemples boucles et conditions</title>
 </head>
 <body>
-<h1>Exercices boucles et conditions</h1>
+<h1>Exemples boucles et conditions</h1>
 <h2>Imbrication des conditions</h2>
 <p>Les conditions peuvent être imbriquées une dans l'autre</p>
 <?php
@@ -34,6 +34,19 @@ alert('coucou');
     }
 
 }
+?>
+<h2>Imbrication des boucles</h2>
+<p>Les boucles peuvent être imbriquées une dans l'autre, ! pour la boucle for de changer de nom de variable d'itération ($i) pour éviter la colision de variable</p>
+<?php
+
+for($i=1; $i<=12; $i++){
+    echo "$i) ";
+    for($a=1; $a<=6; $a++){
+        echo ($i+$a)." ";
+    }
+    echo"<br>";
+}
+
 ?>
 </body>
 </html>
