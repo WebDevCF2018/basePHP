@@ -9,7 +9,7 @@ array
 for
 substr
 if
-elseif
+elseif / else if
 else
 count
 mt_rand
