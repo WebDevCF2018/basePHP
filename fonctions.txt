@@ -12,3 +12,4 @@ if
 elseif
 else
 count
+mt_rand
