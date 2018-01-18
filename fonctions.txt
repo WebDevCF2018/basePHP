@@ -1,4 +1,5 @@
 /*
+https://github.com/WebDevCF2018/basePHP
 */
 //
 echo
@@ -6,3 +7,8 @@ print
 var_dump
 array
 for
+substr
+if
+elseif
+else
+count
