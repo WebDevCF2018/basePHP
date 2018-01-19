@@ -76,17 +76,48 @@ for($i=0; $i<$nb; $i++){
 <h2>Trios</h2>
 <p>Affichez ici le contenu du tableau $var7 en utilisant une boucle for, en séparant les éléments par " - "</p>
 <?php
+// avec for
+$varCount = count($var7);
+for($i=0; $i < $varCount; $i++){
+    echo $var7[$i]." - ";
+}
+echo "<br>";
 
+// avec foreach (pas encore vu) - avantage: fonctionne pour les tableaux (ou objet) même relatif
+foreach ($var7 as $value) {
+    // $value change à chaque tour et contient chaque élément du tableau
+    echo $value." - ";
+}
 ?>
 <h2>Quatros</h2>
 <p>Affichez ici le contenu du tableau $var7 en utilisant une boucle for, en séparant les éléments par " - ", et en supprimant le dernier " - "</p>
 <?php
-
+// avec for
+$varCount = count($var7);
+// variable vide de type string
+$sortie="";
+for($i=0; $i < $varCount; $i++){
+    // on ajoute à la valeur de $sortie (.=)
+    $sortie .= $var7[$i]." - ";
+    // idem sans .= => $sortie = $sortie . $var7[$i]." - ";
+}
+// on affiche la sortie dont on retire les 2 derniers caractères avec substr()
+echo substr($sortie,0,-2);
+echo "<br>";
+// méthode avec if else
+for($i=0; $i < $varCount; $i++){
+    if($i != $varCount-1){
+        echo $var7[$i]." - ";
+    }else{
+        echo $var7[$i];
+    }
+}
 ?>
 <h2>cinquos</h2>
 <p>Affichez ici le contenu de $var3 et $var4 en respectant le format suivant:<br> $var3 vaut X et $var4 vaut X. Le total des 2 fait X. La multiplication des 2 fait X </p>
 <?php
-
+// concaténation avec '' pour afficher le nom des variables (non interprétées), avec des variables (sans guillemets ou avec des doubles). Pour concaténer des calculs, il vaut mieux les mettre entre () pour que PHP effectue le calcul AVANT d'essayer de concaténer le numérique (PHP convertit automatiquement le numérique en string lors d'une concaténation) à la chaine (string)
+    echo '$var3 vaut '."$var3".' et $var4 vaut '.$var4.'. Le total des 2 fait '.($var3+$var4).'. La multiplication des 2 fait '.($var3*$var4);
 ?>
 <h2>sextos</h2>
 <p>si ($var2+$var3) est plus grand que ($var1+$var4) ALORS on affiche "YES" SINON on affiche "NO"</p>
