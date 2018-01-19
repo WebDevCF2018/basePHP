@@ -13,3 +13,5 @@ elseif / else if
 else
 count
 mt_rand
+is_int
+is_string
