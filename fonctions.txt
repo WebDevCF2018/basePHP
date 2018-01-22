@@ -1,5 +1,13 @@
 /*
+Pour récupérer les sources sur github :
+
 https://github.com/WebDevCF2018/basePHP
+
+Pour connaître l'utilité et le fonctionnement des structures et fonctions de PHP,
+tapez les commandes ci-dessous sur la documention officielle de PHP :
+
+http://php.net/manual/fr/
+
 */
 //
 echo
