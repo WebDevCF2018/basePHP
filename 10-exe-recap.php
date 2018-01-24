@@ -122,7 +122,11 @@ for($i=0; $i < $varCount; $i++){
 <h2>sextos</h2>
 <p>si ($var2+$var3) est plus grand que ($var1+$var4) ALORS on affiche "YES" SINON on affiche "NO"</p>
 <?php
-
+if( $var2+$var3 > $var1+$var4 ){
+    echo "YES";
+}else{
+    echo "NO";
+}
 ?>
 </body>
 </html>
