@@ -37,6 +37,23 @@ $a *= 2;
 echo "$a<hr>";
 $a /= 2;
 echo "$a<hr>";
+
+/*
+ * l'endroit où on met le ++ ou le -- change l'ordre d'affectation de la variable
+ */
+$b = 3;
+echo $b++."<hr>"; // on ajoute 1 à $b, ne sera effectué qu'après le ;
+echo "$b<hr>";// ici $b vaut 4
+echo ++$b."<hr>"; // ajoute 1 $b, mais avant l'affichage 5
+echo "$b<hr>";// ici $b vaut 5
+?>
+<h2>Concaténation</h2>
+<p>On utilise ce terme lorsqu'on veut ajouter quelque chose à une chaîne de caractère</p>
+<p>Le . (ou la ,) est le séparateur de concaténation</p>
+<?php
+$txt1 = "Bonjour";
+$txt2 = "les amis!";
+echo $txt1." ".$txt2."<hr>";
 ?>
 </body>
 </html>
