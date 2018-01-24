@@ -25,3 +25,5 @@ is_int
 is_string
 foreach
 ucfirst
+function
+date

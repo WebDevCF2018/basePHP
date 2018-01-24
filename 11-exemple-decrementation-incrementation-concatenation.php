@@ -67,15 +67,15 @@ echo $txt2;
 ?><hr>
 <?php
 // exemple d'utilisation du .=
-$tab=["un","deux","trois","quatre"];
+$tab=["un","deux","trois","quatre","cinq","six"];
 $sortie = "";
 foreach ($tab as $lulu){
     // on met en majuscule chaque première lettre de chaque mot
     $maj = ucfirst($lulu);
     // on ajoute le résultat à sortie
-    $sortie .= " $maj |";
+    $sortie .= " <strong>$maj</strong> |";
 }
-echo $sortie;
+echo "<p style='background-color: orangered '>".$sortie."</p>";
 ?>
 </body>
 </html>
