@@ -24,3 +24,4 @@ mt_rand
 is_int
 is_string
 foreach
+ucfirst

@@ -55,5 +55,27 @@ $txt1 = "Bonjour";
 $txt2 = "les amis!";
 echo $txt1." ".$txt2."<hr>";
 ?>
+<p>En principe, on ne peut concaténer que des chaînes de type string, mais PHP fait la conversion quand il s'agit de numériques</p>
+<?php
+echo $a.$txt1.$b;
+?>
+<h3>Opérateur de concaténation .=</h3>
+<?php
+$txt2 .= $txt1;
+echo $txt2;
+// équivaut à $txt2 = $txt2.$txt1;
+?><hr>
+<?php
+// exemple d'utilisation du .=
+$tab=["un","deux","trois","quatre"];
+$sortie = "";
+foreach ($tab as $lulu){
+    // on met en majuscule chaque première lettre de chaque mot
+    $maj = ucfirst($lulu);
+    // on ajoute le résultat à sortie
+    $sortie .= " $maj |";
+}
+echo $sortie;
+?>
 </body>
 </html>
