@@ -14,9 +14,11 @@ function mafonction(){
     // return renvoie le résultat sans l'afficher et arrête le code à cette ligne
     return date("Y"); // affiche l'année actuelle en 4 chiffres
 }
-// appel et exécution de la fonction et affichage
+// appel et exécution de la fonction
 $a = mafonction();
+// affichage
 echo $a;
+
 
 ?>
 </body>
