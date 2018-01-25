@@ -36,6 +36,26 @@ function soustraction($arg1,$arg2){
     }
 }
 /*
- * fonction permettant de multiplier 2 numériques ($arg1 - $arg2)
+ * fonction permettant de multiplier 2 numériques ($arg1 * $arg2)
  * 2 arguments obligatoires: doivent être numériques
  */
+function multiplie($arg1,$arg2){
+    if(is_numeric($arg1) && is_numeric($arg2)){
+        $sortie = $arg1*$arg2;
+        return $sortie;
+    }else{
+        return "Vos variables ne sont pas numériques";
+    }
+}
+/*
+ * fonction permettant de diviser 2 numériques ($arg1 / $arg2)
+ * 2 arguments obligatoires: doivent être numériques
+ */
+function divise($arg1,$arg2){
+    if(is_numeric($arg1) && is_numeric($arg2)){
+        $sortie = $arg1/$arg2;
+        return $sortie;
+    }else{
+        return "Vos variables ne sont pas numériques";
+    }
+}
