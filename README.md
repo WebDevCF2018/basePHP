@@ -1,5 +1,5 @@
 # basePHP
-##Les bases de PHP
+## Les bases de PHP
 ### Codes des bases en PHP vus au cours.
 #### echo
 — Affiche une chaîne de caractères
