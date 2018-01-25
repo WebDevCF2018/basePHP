@@ -27,3 +27,4 @@ foreach
 ucfirst
 function
 date
+isset
