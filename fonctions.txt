@@ -26,5 +26,6 @@ is_string
 foreach
 ucfirst
 function
+return
 date
 isset

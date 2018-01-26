@@ -33,6 +33,8 @@
 — Met le premier caractère en majuscule
 #### function
 — Permet de définir une fonction
+#### return
+— renvoie une valeur dans une fonction
 #### date
 — Formate une date/heure locale
 #### isset
