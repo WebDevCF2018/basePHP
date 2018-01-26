@@ -8,9 +8,14 @@
 <h1>foreach()</h1>
 <p>La structure de langage foreach fournit une façon simple de parcourir des tableaux. foreach ne fonctionne que pour les tableaux et les objets, et émettra une erreur si vous tentez de l'utiliser sur une variable de type différent ou une variable non initialisée. Il existe deux syntaxes :</p>
 <pre>
+// récupération de la valeur ($value) de chaque entrée à chaque tour (itération)
+
     foreach (array_expression as $value){
         //commandes
     }
+
+// récupération de la clé ($key) et de la valeur ($value) de chaque entrée à chaque tour (itération)
+
     foreach (array_expression as $key => $value){
         //commandes
     }</pre>
