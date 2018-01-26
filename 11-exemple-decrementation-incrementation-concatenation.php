@@ -75,7 +75,7 @@ foreach ($tab as $lulu){
     // on ajoute le résultat à sortie
     $sortie .= " <strong>$maj</strong> |";
 }
-echo "<p style='background-color: orangered '>".$sortie."</p>";
+echo "<p style='background-color: #ff9fc9 '>" .$sortie."</p>";
 ?>
 </body>
 </html>

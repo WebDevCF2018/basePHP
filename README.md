@@ -35,3 +35,5 @@
 — Permet de définir une fonction
 #### date
 — Formate une date/heure locale
+#### isset
+— Détermine si une variable est définie (initialisée) et est différente de NULL
