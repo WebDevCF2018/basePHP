@@ -34,7 +34,7 @@
 #### function
 — Permet de définir une fonction
 #### return
-— renvoie une valeur dans une fonction
+— Envoie une valeur depuis une fonction, la commande return termine immédiatement la fonction, et retourne l'argument qui lui est passé.
 #### date
 — Formate une date/heure locale
 #### isset
