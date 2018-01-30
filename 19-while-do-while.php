@@ -77,5 +77,55 @@ do{
 }while($c>=1 && $c< 10);
 
 ?>
+<h1>foreach</h1>
+<h3>Boucle permettant de lister le contenu d'un tableau (ou d'un objet).</h3>
+<h4>La boucle à utiliser sur un tableau, et plus particulièrement pour les tableaux associatifs.</h4>
+<h5>Première méthode:</h5>
+<p>ne récupère que les valeurs du tableau</p>
+<pre>
+foreach($tableau as $valeur){
+   // boucle tant qu'on a des valeurs dans le tableau,
+    ces valeurs sont stockées dans $valeur
+}
+</pre>
+<h5>Deuxième méthode:</h5>
+<p>récupère les clefs et les valeurs du tableau</p>
+<pre>
+foreach($tableau as $clef => $valeur){
+   // boucle tant qu'on a des valeurs dans le tableau,
+    ces valeurs sont stockées dans $valeur et les clefs dans $clef
+}
+</pre>
+<?php
+$monTab = ["un",
+            3=>"deux",
+            "quatrième"=>"quatre",
+            true,
+            7=>8.27,
+            "gros"=>160
+    ];
+echo "<pre>";
+var_dump($monTab);
+echo "</pre>";
+
+// for, while et do while inappropriés pour traîter facilement les éléments du tableau
+
+foreach($monTab as $v){
+    echo " $v | ";
+}
+echo "<hr>";
+
+foreach($monTab as $c => $v){
+    echo "$c => $v | ";
+}
+echo "<hr>";
+
+// ancienne méthode pour lister un tableau qui précédait le foreach (peut envore se voir de tant à autre dans du code
+
+while(list($c,$v)=each($monTab)){
+    echo "$c => $v | ";
+}
+
+?>
 </body>
 </html>
