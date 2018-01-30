@@ -29,3 +29,5 @@ function
 return
 date
 isset
+while
+do-while

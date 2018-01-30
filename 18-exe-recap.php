@@ -8,8 +8,8 @@
 <h1>Exe recap</h1>
 <h2>Formulaire avec variables get</h2>
 <form action="" name="nom" method="get">
-    <input name="chiffre1" type="text"  value="5"> *
-    <input name="chiffre2" type="text"  value="8">
+    <input name="chiffre1" type="text"  placeholder="1"> *
+    <input name="chiffre2" type="text"  placeholder="1">
     <input  type="submit"  value="=">
 </form>
 <h3>Demande</h3>
