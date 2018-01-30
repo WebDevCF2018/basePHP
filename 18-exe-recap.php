@@ -1,3 +1,6 @@
+<?php
+include "18-fonctions.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,7 +18,9 @@
 <h3>Demande</h3>
 <p>Ïncluez le fichier contenant notre fonction multi, si l'utilisateur clique sur le signe "=", affichez la réponse au calcul ci-dessous (il faut vérifier l'existence des 2 variables get pour le faire)</p>
 <?php
-
+if(isset($_GET["chiffre1"],$_GET["chiffre2"])){
+    echo multi($_GET["chiffre1"],$_GET["chiffre2"]);
+}
 ?>
 </body>
 </html>

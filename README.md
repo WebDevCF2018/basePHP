@@ -1,25 +1,33 @@
 # basePHP
 ## Les bases de PHP
-### Codes des bases en PHP vus au cours.
+### Codes des bases en PHP vus au cours :+1:
 #### echo
 — Affiche une chaîne de caractères
 http://bit.ly/2DXMhWr
 #### print
 — Affiche une chaîne de caractères
+http://bit.ly/2nrf0ZH
 #### var_dump
 — Affiche les informations d'une variable
+http://bit.ly/2Gxc9aj
 #### array
 — Crée un tableau
+http://bit.ly/2npspBa
 #### for
 — Les boucles for sont les boucles les plus complexes en PHP.
+http://bit.ly/2BDf4KT
 #### substr
 — Retourne un segment de chaîne
+http://bit.ly/2EnYv8L
 #### if
 — L'instruction if est une des plus importantes instructions de tous les langages, PHP inclus. Elle permet l'exécution conditionnelle d'une partie de code.
+http://bit.ly/2Epn8BX
 #### elseif / else if
 — elseif, comme son nom l'indique, est une combinaison de if et de else. Comme l'expression else, il permet d'exécuter une instruction après un if dans le cas où le "premier" if est évalué comme FALSE. Mais, à la différence de l'expression else, il n'exécutera l'instruction que si l'expression conditionnelle elseif est évaluée comme TRUE.
+http://bit.ly/2rQAN2b
 #### else
 — Souvent, vous voulez exécuter une instruction si une condition est remplie, et une autre instruction si cette condition n'est pas remplie. C'est à cela que sert else. else fonctionne après un if et exécute les instructions correspondantes au cas où l'expression du if est FALSE.
+
 #### count
 — Compte tous les éléments d'un tableau ou quelque chose d'un objet
 #### mt_rand
