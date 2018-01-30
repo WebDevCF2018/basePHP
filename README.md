@@ -3,6 +3,7 @@
 ### Codes des bases en PHP vus au cours.
 #### echo
 — Affiche une chaîne de caractères
+http://bit.ly/2DXMhWr
 #### print
 — Affiche une chaîne de caractères
 #### var_dump
@@ -39,3 +40,7 @@
 — Formate une date/heure locale
 #### isset
 — Détermine si une variable est définie (initialisée) et est différente de NULL
+#### while
+— La boucle while est le moyen le plus simple d'implémenter une boucle en PHP. 
+#### do-while
+— Les boucles do-while ressemblent beaucoup aux boucles while, mais l'expression est testée à la fin de chaque itération plutôt qu'au début. La principale différence par rapport à la boucle while est que la première itération de la boucle do-while est toujours exécutée.
