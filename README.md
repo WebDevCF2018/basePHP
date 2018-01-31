@@ -41,7 +41,7 @@ http://bit.ly/2E1PIeQ
 — Détermine si une variable est de type chaîne de caractères
 http://bit.ly/2rUhtRK
 #### is_numeric
-— — Détermine si une variable est un type numérique
+— Détermine si une variable est un type numérique
 http://bit.ly/2BFyWwE
 #### foreach
 — La structure de langage foreach fournit une façon simple de parcourir des tableaux. foreach ne fonctionne que pour les tableaux et les objets, et émettra une erreur si vous tentez de l'utiliser sur une variable de type différent ou une variable non initialisée.
