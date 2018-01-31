@@ -27,7 +27,7 @@ http://bit.ly/2Epn8BX
 http://bit.ly/2rQAN2b
 #### else
 — Souvent, vous voulez exécuter une instruction si une condition est remplie, et une autre instruction si cette condition n'est pas remplie. C'est à cela que sert else. else fonctionne après un if et exécute les instructions correspondantes au cas où l'expression du if est FALSE.
-
+http://bit.ly/2nto5RH
 #### count
 — Compte tous les éléments d'un tableau ou quelque chose d'un objet
 http://bit.ly/2nq3EFO
