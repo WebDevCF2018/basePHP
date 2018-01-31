@@ -5,14 +5,47 @@ include "20-fonctions.php";
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Exe recap</title>
+    <title>Calculatrice</title>
 </head>
 <body>
-<h1>Exe recap</h1>
+<h1>Calculatrice</h1>
 <h2>Formulaire avec variables get</h2>
 <form action="" name="nom" method="get">
-    <input name="chiffre1" type="text"  placeholder="1"> *
-    <input name="chiffre2" type="text"  placeholder="1">
+    <input name="chiffre1" type="text"  placeholder="1"
+        value="<?php
+        // si il existe la variable GET chiffre1 (on a envoyé le formulaire)
+        if(isset($_GET['chiffre1'])){
+            // on affiche dans le value html le contenu de chiffre1
+            echo $_GET['chiffre1'];
+        } ?>">
+
+    <?php
+    // si on a envoyé le formulaire
+    if(isset($_GET['operateur'])){
+        // initialisation de variables vides pour garder l'opérateur selectionné
+        $a="";$s="";$m="";$d="";
+
+        // si addition
+        if($_GET['operateur']=="addition"){
+            // on remplit la variable pour rajouter 'selected' à l'option
+            $a="selected";
+        }elseif ($_GET['operateur']=="soustraction"){
+            $s="selected";
+        }elseif ($_GET['operateur']=="multiplication"){
+            $m="selected";
+        }else{
+            $d="selected";
+        }
+    }
+    ?>
+    <select name="operateur">
+        <option value="addition" <?php echo $a;?>>+</option>
+        <option value="soustraction" <?=$s?>>-</option>
+        <option value="multiplication" <?=$m?>>*</option>
+        <option value="division" <?=$d?>>/</option>
+    </select>
+    <input name="chiffre2" type="text"  placeholder="1"
+    value="<?php if(isset($_GET['chiffre2'])) echo $_GET['chiffre2'] ?>">
     <input  type="submit"  value="=">
 </form>
 <h3>Demande</h3>
