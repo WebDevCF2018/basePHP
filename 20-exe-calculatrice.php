@@ -54,8 +54,32 @@ include "20-fonctions.php";
 <?php
 // si les variables get existent (voir url)
 if(isset($_GET["chiffre1"],$_GET["chiffre2"],$_GET['operateur'])){
-    // que multi...
-    echo multi($_GET["chiffre1"],$_GET["chiffre2"]);
+    // suite de conditions
+    if($_GET['operateur']=="addition"){
+        echo addition($_GET["chiffre1"],$_GET["chiffre2"]);
+    }elseif ($_GET['operateur']=="soustraction"){
+        echo soustraction($_GET["chiffre1"],$_GET["chiffre2"]);
+    }elseif ($_GET['operateur']=="multiplication"){
+        echo multi($_GET["chiffre1"],$_GET["chiffre2"]);
+    }else{
+        echo division($_GET["chiffre1"],$_GET["chiffre2"]);
+    }
+    echo "<hr>";
+
+    // utilisation d'un switch pour effectuer le même travail que les successions de if, elseif et else. Ne fonctionne que pour vérifier l'égalité de la valeur d'une seule variable (if elseif et else restent indispensables pour d'autres cas)
+    switch ($_GET['operateur']){
+        case "addition":
+            echo addition($_GET["chiffre1"],$_GET["chiffre2"]);
+            break;
+        case "soustraction":
+            echo soustraction($_GET["chiffre1"],$_GET["chiffre2"]);
+            break;
+        case "multiplication":
+            echo multi($_GET["chiffre1"],$_GET["chiffre2"]);
+            break;
+        default:
+            echo division($_GET["chiffre1"],$_GET["chiffre2"]);
+    }
 }
 ?></p>
 </body>

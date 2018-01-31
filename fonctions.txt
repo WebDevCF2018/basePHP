@@ -32,3 +32,4 @@ date
 isset
 while
 do-while
+switch

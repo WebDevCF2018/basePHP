@@ -67,3 +67,6 @@ http://bit.ly/2DPaO0K
 #### do-while
 — Les boucles do-while ressemblent beaucoup aux boucles while, mais l'expression est testée à la fin de chaque itération plutôt qu'au début. La principale différence par rapport à la boucle while est que la première itération de la boucle do-while est toujours exécutée.
 http://bit.ly/2rSyUCb
+#### switch
+— L'instruction switch équivaut à une série d'instructions if. En de nombreuses occasions, vous aurez besoin de comparer la même variable (ou expression) avec un grand nombre de valeurs différentes, et d'exécuter différentes parties de code suivant la valeur à laquelle elle est égale.
+http://bit.ly/2npBtal
