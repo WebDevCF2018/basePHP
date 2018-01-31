@@ -20,10 +20,11 @@ include "20-fonctions.php";
         } ?>">
 
     <?php
+    // initialisation de variables vides pour garder l'opérateur selectionné dans le select
+    $a="";$s="";$m="";$d="";
+
     // si on a envoyé le formulaire (pourrait être remplacer par un switch)
     if(isset($_GET['operateur'])){
-        // initialisation de variables vides pour garder l'opérateur selectionné
-        $a="";$s="";$m="";$d="";
 
         // si addition
         if($_GET['operateur']=="addition"){
