@@ -20,7 +20,7 @@ include "20-fonctions.php";
         } ?>">
 
     <?php
-    // si on a envoyé le formulaire
+    // si on a envoyé le formulaire (pourrait être remplacer par un switch)
     if(isset($_GET['operateur'])){
         // initialisation de variables vides pour garder l'opérateur selectionné
         $a="";$s="";$m="";$d="";
@@ -49,11 +49,11 @@ include "20-fonctions.php";
     <input  type="submit"  value="=">
 </form>
 <h3>Demande</h3>
-<p>Ïncluez le fichier contenant notre fonction multi, si l'utilisateur clique sur le signe "=", affichez la réponse au calcul ci-dessous (il faut vérifier l'existence des 2 variables get pour le faire)</p><p>
+<p>Ïncluez le fichier contenant 4 fonctions (dont multi), si l'utilisateur clique sur le signe "=", affichez la réponse au calcul ci-dessous (il faut vérifier l'existence des 3 variables get pour le faire et choisir la fonction suivant le choix de l'opérateur)</p><p>
 <?php
 // si les variables get existent (voir url)
-if(isset($_GET["chiffre1"],$_GET["chiffre2"])){
-    // on affiche (echo) le résultat de la fonction multi($_GET["chiffre1"],$_GET["chiffre2"])
+if(isset($_GET["chiffre1"],$_GET["chiffre2"],$_GET['operateur'])){
+    // que multi...
     echo multi($_GET["chiffre1"],$_GET["chiffre2"]);
 }
 ?></p>
