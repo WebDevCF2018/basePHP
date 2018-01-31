@@ -1,5 +1,5 @@
 <?php
-include "18-fonctions.php";
+include "20-fonctions.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
