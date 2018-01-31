@@ -30,25 +30,40 @@ http://bit.ly/2rQAN2b
 
 #### count
 — Compte tous les éléments d'un tableau ou quelque chose d'un objet
+http://bit.ly/2nq3EFO
 #### mt_rand
 — Génère une meilleure valeur aléatoire
+http://bit.ly/2DQbUt7
 #### is_int
 — Détermine si une variable est de type nombre entier
+http://bit.ly/2E1PIeQ
 #### is_string
 — Détermine si une variable est de type chaîne de caractères
+http://bit.ly/2rUhtRK
+#### is_numeric
+— — Détermine si une variable est un type numérique
+http://bit.ly/2BFyWwE
 #### foreach
 — La structure de langage foreach fournit une façon simple de parcourir des tableaux. foreach ne fonctionne que pour les tableaux et les objets, et émettra une erreur si vous tentez de l'utiliser sur une variable de type différent ou une variable non initialisée.
+http://bit.ly/2rW8bEC
 #### ucfirst
 — Met le premier caractère en majuscule
+http://bit.ly/2ErR5kL
 #### function
 — Permet de définir une fonction
+http://bit.ly/2DY8RhR
 #### return
 — Envoie une valeur depuis une fonction, la commande return termine immédiatement la fonction, et retourne l'argument qui lui est passé.
+http://bit.ly/2BGFqvf
 #### date
 — Formate une date/heure locale
+http://bit.ly/2E33T3q
 #### isset
 — Détermine si une variable est définie (initialisée) et est différente de NULL
+http://bit.ly/2rRqk6F
 #### while
 — La boucle while est le moyen le plus simple d'implémenter une boucle en PHP. 
+http://bit.ly/2DPaO0K
 #### do-while
 — Les boucles do-while ressemblent beaucoup aux boucles while, mais l'expression est testée à la fin de chaque itération plutôt qu'au début. La principale différence par rapport à la boucle while est que la première itération de la boucle do-while est toujours exécutée.
+http://bit.ly/2rSyUCb

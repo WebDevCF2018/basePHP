@@ -23,6 +23,7 @@ count
 mt_rand
 is_int
 is_string
+is_numeric
 foreach
 ucfirst
 function
