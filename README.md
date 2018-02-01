@@ -70,3 +70,6 @@ http://bit.ly/2rSyUCb
 #### switch
 — L'instruction switch équivaut à une série d'instructions if. En de nombreuses occasions, vous aurez besoin de comparer la même variable (ou expression) avec un grand nombre de valeurs différentes, et d'exécuter différentes parties de code suivant la valeur à laquelle elle est égale.
 http://bit.ly/2npBtal
+#### time
+— Retourne le timestamp UNIX actuel (en secondes depuis le 01/01/1970).
+http://bit.ly/2nsc1AN

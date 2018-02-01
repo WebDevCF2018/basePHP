@@ -33,3 +33,4 @@ isset
 while
 do-while
 switch
+time

@@ -30,6 +30,7 @@ if(isset($_GET['q'])){
             for($i=1;$i<=200;$i++){
                 $s .= "$i | ";
             }
+            
             echo substr($s,0,-2);
             break;
         case "jovial":
