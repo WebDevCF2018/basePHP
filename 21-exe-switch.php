@@ -13,10 +13,10 @@
     <input type="submit" value="Envoyer">
 </form>
 <h4>En utilisant les variables GET et le switch</h4>
-<p>Affichez ci-dessous :</p>
+<p>Affichez ci-dessous :</p><hr>
 <p><?php
 
-?></p>
+?></p><hr>
 <p>Si l'utilisateur entre quelque chose qui n'est pas dans la liste, affichez $letexte." n'est pas dans la liste".</p>
 <p>Si l'utilisateur entre "haha", affichez "Qu'est-ce qui te fait rire?"</p>
 <p>Si l'utilisateur entre "lulu", affichez "lala?"</p>
