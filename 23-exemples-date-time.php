@@ -54,13 +54,29 @@ if(isset($_GET['temps'])){
     $difTime = time()-$heure;
     echo "datetime de la différence en secondes (référence 01/01/1970) : ".date("Y-m-d H:i:s",$difTime)."<br>";
 
-    // 1) donnez la différence en minutes entre les 2 temps (arrondie au plus proche)
 
+    // 1) donnez la différence en minutes entre les 2 temps (arrondie au plus proche)
+    $min = round($difTime/60);
         // si chiffre négatif, afficher "X minutes dans le future<br>", sinon afficher "X minutes dans le passé<br>"
+    if($min<0){
+        // on retire le moins comme ça
+        echo substr("$min minutes dans le futur<br>",1);
+        // on comme ça abs() donne la valeur absolue (non négative)
+        echo abs($min)." minutes dans le futur<br>";
+    }else{
+        echo "$min minutes dans le passé<br>";
+    }
+
 
     // 2) donnez la différence en heures entre les 2 temps (arrondie à l'heure supérieure)
+    $heure = ceil($difTime/(60*60));
 
         // si chiffre négatif, afficher "X heures dans le future<br>", sinon afficher "X heures dans le passé<br>"
+    if($heure<0){
+        echo abs($heure)." heures dans le futur<br>";
+    }else{
+        echo "$heure heures dans le passé<br>";
+    }
 
     // 3) donnez la différence en jours, heures ET minutes (minutes arrondies à l'inférieure)
 

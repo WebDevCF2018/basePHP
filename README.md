@@ -76,3 +76,15 @@ http://bit.ly/2nsc1AN
 #### strtotime
 — Transforme un texte anglais en timestamp
 http://bit.ly/2DXWGyf
+#### abs
+— Valeur absolue, transforme tous les négatifs en positifs
+http://bit.ly/2E1CQlC
+#### round
+— Arrondit un nombre à virgule flottante
+http://bit.ly/2s9IHny
+#### ceil
+— Arrondit au nombre supérieur
+http://bit.ly/2Eiv6PG
+#### floor
+— Arrondit à l'entier inférieur
+http://bit.ly/2E2TcyF
