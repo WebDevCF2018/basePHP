@@ -48,17 +48,21 @@ if(isset($_GET['temps'])){
     echo '<br>datetime => date("Y-m-d H:i:s",$heure) => '.date("Y-m-d H:i:s",$heure)."<br>";
 
     // écart en secondes entre le temps actuel et le temps entré par l'utilisateur
-    echo '(time()-$heure) = '.time()."-$heure ".(time()-$heure)." => secondes<br>";
+    echo '(time()-$heure) = '.time()."-$heure => ".(time()-$heure)." => secondes<br>";
 
     // création d'une variable contenant la différence entre temps actuel et temps du formulaire
     $difTime = time()-$heure;
-    echo "datetime de la différence en secondes (référence 01/01/1970) : ".date("Y-m-d H:i:s",$difTime);
+    echo "datetime de la différence en secondes (référence 01/01/1970) : ".date("Y-m-d H:i:s",$difTime)."<br>";
 
-    // donnez la différence en minutes entre les 2 temps (arrondie au plus proche)
+    // 1) donnez la différence en minutes entre les 2 temps (arrondie au plus proche)
 
-    // donnez la différence en heures entre les 2 temps (arrondie à l'heure supérieure)
+        // si chiffre négatif, afficher "X minutes dans le future<br>", sinon afficher "X minutes dans le passé<br>"
 
-    // donnez la différence en jours, heures ET minutes (minutes arrondies à l'inférieure)
+    // 2) donnez la différence en heures entre les 2 temps (arrondie à l'heure supérieure)
+
+        // si chiffre négatif, afficher "X heures dans le future<br>", sinon afficher "X heures dans le passé<br>"
+
+    // 3) donnez la différence en jours, heures ET minutes (minutes arrondies à l'inférieure)
 
 }
 ?>
