@@ -73,3 +73,6 @@ http://bit.ly/2npBtal
 #### time
 — Retourne le timestamp UNIX actuel (en secondes depuis le 01/01/1970).
 http://bit.ly/2nsc1AN
+#### strtotime
+— Transforme un texte anglais en timestamp
+http://bit.ly/2DXWGyf

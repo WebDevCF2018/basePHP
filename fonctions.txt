@@ -34,3 +34,4 @@ while
 do-while
 switch
 time
+strtotime
