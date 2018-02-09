@@ -103,9 +103,13 @@ if(isset($_GET['temps'])){
 
     // si $TotalJours arrondi à l'entier inférieur est plus grand que 0
     if($jourArrondi>0){
-        // on rajoute les jours à $final si on en au moins 1
-        $final .= $jourArrondi." jour(s), ";
-        // on va soustraire les jours (arrondis à l'inférieur) convertis en secondes du total des secondes (-= => retirer à la valeur)
+        if($jourArrondi == 1){
+            $final .= $jourArrondi." jour, ";
+        }else{
+            // on rajoute les jours à $final si on en au moins 1
+            $final .= $jourArrondi." jours, ";
+        }
+                // on va soustraire les jours (arrondis à l'inférieur) convertis en secondes du total des secondes (-= => retirer à la valeur)
         $difTime -= $jourArrondi*24*60*60;
     }
 
@@ -116,9 +120,13 @@ if(isset($_GET['temps'])){
     $TotalHeures = $difTime/(60*60);
     $heureArrondi = floor($TotalHeures);
     if($heureArrondi>0){
-        // on rajoute dans finale le nombre d'heures à afficher
-        $final .= $heureArrondi." heure(s),";
-        // on soustrait les heures (arrondies à l'inférieur) converties en secondes du total des secondes (-= => retirer à la valeur)
+        if($heureArrondi == 1){
+            $final .= $heureArrondi." heure, ";
+        }else {
+            // on rajoute dans finale le nombre d'heures à afficher
+            $final .= $heureArrondi . " heures, ";
+        }
+            // on soustrait les heures (arrondies à l'inférieur) converties en secondes du total des secondes (-= => retirer à la valeur)
         $difTime -= $heureArrondi*60*60;
     }
 
@@ -128,7 +136,14 @@ if(isset($_GET['temps'])){
      */
     $TotalMinutes = $difTime/60;
     $minuteArrondi = floor($TotalMinutes);
-
+    if($minuteArrondi>0){
+        $final.=$minuteArrondi;
+        if($minuteArrondi==1){
+            $final.= " minute";
+        }else {
+            $final.= " minutes";
+        }
+    }
     // fin
     echo $final;
 }
