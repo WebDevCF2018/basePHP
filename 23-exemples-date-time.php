@@ -80,6 +80,57 @@ if(isset($_GET['temps'])){
 
     // 3) donnez la différence en jours, heures ET minutes (minutes arrondies à l'inférieure)
 
+    $final=""; // conteneur de résultat de type string vide
+
+    // si le chiffre est négatif (on est dans le futur)
+    if($difTime<0){
+        // date dans le futur
+        $final .= "Dans ";
+    }else{
+        // date dans le passé
+        $final .= "Il y a ";
+    }
+
+    // on met $difTime en positif quoi qu'il arrive (faciliter les calculs)
+    $difTime = abs($difTime);
+
+    /*
+     * JOURS
+     */
+    $TotalJours = $difTime/(60*60*24);
+    // on arrondit les jours à l'entier
+    $jourArrondi = floor($TotalJours);
+
+    // si $TotalJours arrondi à l'entier inférieur est plus grand que 0
+    if($jourArrondi>0){
+        // on rajoute les jours à $final si on en au moins 1
+        $final .= $jourArrondi." jour(s), ";
+        // on va soustraire les jours (arrondis à l'inférieur) convertis en secondes du total des secondes (-= => retirer à la valeur)
+        $difTime -= $jourArrondi*24*60*60;
+    }
+
+    /*
+     * HEURES
+     */
+    // total des heures restantes après retrait des jours ($difTime)
+    $TotalHeures = $difTime/(60*60);
+    $heureArrondi = floor($TotalHeures);
+    if($heureArrondi>0){
+        // on rajoute dans finale le nombre d'heures à afficher
+        $final .= $heureArrondi." heure(s),";
+        // on soustrait les heures (arrondies à l'inférieur) converties en secondes du total des secondes (-= => retirer à la valeur)
+        $difTime -= $heureArrondi*60*60;
+    }
+
+
+    /*
+     * MINUTES
+     */
+    $TotalMinutes = $difTime/60;
+    $minuteArrondi = floor($TotalMinutes);
+
+    // fin
+    echo $final;
 }
 ?>
 <pre>
