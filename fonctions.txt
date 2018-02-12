@@ -39,3 +39,7 @@ abs
 round
 ceil
 floor
+include
+include_once
+require
+require_once
