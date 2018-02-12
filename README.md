@@ -88,3 +88,15 @@ http://bit.ly/2Eiv6PG
 #### floor
 — Arrondit à l'entier inférieur
 http://bit.ly/2E2TcyF
+#### include
+— L'instruction de langage include inclut et exécute le fichier spécifié en argument. On peut le charger autant de X qu'on le souhaite dans la même page
+http://bit.ly/2BVysr7
+#### include_once
+— La structure include_once inclut et évalue le fichier spécifié durant l'exécution du script. Le comportement est similaire à include, mais la différence est que si le code a déjà été inclus, il ne le sera pas une seconde fois, et include_once retourne TRUE. Comme son nom l'indique, le fichier sera inclut une seule fois.
+http://bit.ly/2EkvLg4
+#### require
+— require est identique à include mis à part le fait que lorsqu'une erreur survient, il produit également une erreur fatale qui arrête le script
+http://bit.ly/2sjUeR6
+#### require_once
+— L'instruction require_once est identique à require mis à part que PHP vérifie si le fichier a déjà été inclus, et si c'est le cas, ne l'inclut pas une deuxième fois.
+http://bit.ly/2EjeFiK
