@@ -43,3 +43,8 @@ include
 include_once
 require
 require_once
+mysqli_connect
+mysqli_close
+mysqli_set_charset
+mysqli_query
+mysqli_fetch_assoc

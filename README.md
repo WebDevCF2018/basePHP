@@ -100,3 +100,18 @@ http://bit.ly/2sjUeR6
 #### require_once
 — L'instruction require_once est identique à require mis à part que PHP vérifie si le fichier a déjà été inclus, et si c'est le cas, ne l'inclut pas une deuxième fois.
 http://bit.ly/2EjeFiK
+#### mysqli_connect
+— Ouvre une connexion à un serveur MySQL
+http://bit.ly/2BXOnFn
+#### mysqli_close
+— Ferme une connexion
+http://bit.ly/2o3gsBJ
+#### mysqli_set_charset
+— Définit le jeu de caractères par défaut du client
+http://bit.ly/2BqICib
+#### mysqli_query
+— Exécute une requête sur la base de données
+http://bit.ly/2sqYIpl
+#### mysqli_fetch_assoc
+— Récupère une ligne de résultat sous forme de tableau associatif
+http://bit.ly/2F1hOFi
