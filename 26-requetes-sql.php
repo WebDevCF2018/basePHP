@@ -6,7 +6,7 @@ require_once "26-connectdb.php";
 
 
 // variable contenant la requête MySQL
-$sql1 = "SELECT * FROM produit";
+$sql1 = "SELECT * FROM produit WHERE id BETWEEN 3 AND 6";
 
 // exécution de la requête
 $query1 = mysqli_query($db,$sql1);
