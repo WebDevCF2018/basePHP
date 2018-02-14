@@ -31,6 +31,7 @@ $query = mysqli_query($db,"SELECT * FROM produit");
 
 $req = mysqli_query($db,"SELECT * FROM fournisseur");
 
+
 // fermeture de connexion (se ferme automatiquement en fin de page si non permanente, donc peu fréquente)
 mysqli_close($db);
 ?>
