@@ -22,8 +22,11 @@ mysqli_close($db);
 </head>
 <body>
 <?php
-// lorsque l'on pense qu'on peut avoir plus d'un résultat, on utilise la boucle while (bonne pratique)
+// lorsque l'on pense qu'on peut avoir plus d'un résultat, on utilise la boucle while (bonne pratique) - il liste le résultat et le transforme en tableau associatif (dans la variable $ligne), puis passe à ligne suivante et répète l'action tant qu'on a des résultats
 
+while($ligne = mysqli_fetch_assoc($query1)){
+    echo "<p>id: {$ligne['id']} | nom: {$ligne['nom']} | couleur: {$ligne['couleur']} | poids: {$ligne['poids']}</p>";
+}
 ?>
 </body>
 </html>
