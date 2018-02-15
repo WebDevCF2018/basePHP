@@ -49,3 +49,4 @@ mysqli_set_charset
 mysqli_query
 mysqli_fetch_assoc
 mysqli_num_rows
+define
