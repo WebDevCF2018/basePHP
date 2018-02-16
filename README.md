@@ -115,3 +115,9 @@ http://bit.ly/2sqYIpl
 #### mysqli_fetch_assoc
 — Récupère une ligne de résultat sous forme de tableau associatif
 http://bit.ly/2F1hOFi
+#### mysqli_num_rows
+— Retourne le nombre de lignes dans un résultat
+http://bit.ly/2EvjMk1
+#### define
+— Définit une constante
+http://bit.ly/2HgCTw5
