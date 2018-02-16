@@ -19,6 +19,11 @@ echo COUCOU;
 // bonne pratique, tout en majuscule en utilisant l'"_" comme séparateur
 define("UN_NOM_COMPOSE",true);
 echo UN_NOM_COMPOSE;
+
+// depuis php 7, on peut mettre des tableaux dans une constante
+define("TAB",array("un","deux"));
+
+var_dump(TAB);
 ?>
 </body>
 </html>

@@ -50,3 +50,9 @@ mysqli_query
 mysqli_fetch_assoc
 mysqli_num_rows
 define
+mysqli_connect_error
+mysqli_connect_errno
+die
+exit
+trim
+strip_tags
