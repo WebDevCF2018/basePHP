@@ -56,3 +56,4 @@ die
 exit
 trim
 strip_tags
+htmlspecialchars

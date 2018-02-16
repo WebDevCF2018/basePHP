@@ -16,6 +16,9 @@ if(isset($_POST['monTitre'])
         $letitre = htmlspecialchars($letitre,ENT_QUOTES);
         // on retire les espaces vides devant et derrière la chaîne de caractère
         $letitre = trim($letitre);
+
+        $letexte = trim(htmlspecialchars(strip_tags($_POST['monTexte']),ENT_QUOTES));
+        $lauteur = trim(htmlspecialchars(strip_tags($_POST['monAuteur']),ENT_QUOTES));
 }
 
 // requête sql sélectionnant tous les articles
