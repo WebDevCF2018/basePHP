@@ -2,6 +2,9 @@
 require_once "29-config.php";
 require_once "29-connectdb.php";
 
+
+
+
 // on va vérifier si le formulaire a bien été envoyé (existence des variables nécessaires de type post)
 if(isset($_POST['monTitre'])
     && isset($_POST['monTexte'])
@@ -19,7 +22,15 @@ if(isset($_POST['monTitre'])
 
         $letexte = trim(htmlspecialchars(strip_tags($_POST['monTexte']),ENT_QUOTES));
         $lauteur = trim(htmlspecialchars(strip_tags($_POST['monAuteur']),ENT_QUOTES));
+
+        // si après traîtement nos variables ne sont pas vides
+        if(!empty($letitre)&&!empty($letexte)&&!empty($lauteur)){
+            $sql = "INSERT INTO article (titre,texte,auteur) VALUES ('$letitre','$letexte','$lauteur')";
+            mysqli_query($db,$sql);
+
+        }
 }
+
 
 // requête sql sélectionnant tous les articles
 $sql = "SELECT * FROM article ORDER BY id DESC";
@@ -29,7 +40,6 @@ $recup = mysqli_query($db,$sql);
 
 // on compte le nombre de résultat
 $nb_recup = mysqli_num_rows($recup);
-
 
 
 ?>
@@ -62,6 +72,7 @@ if(!$nb_recup){
         echo "<h5>Par ".$row['auteur']." le ".$row['temps']."</h5><hr>";
     }
 }
-?>
+
+?><pre><?var_dump($_POST);?></pre>
 </body>
 </html>
