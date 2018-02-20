@@ -118,6 +118,24 @@ http://bit.ly/2F1hOFi
 #### mysqli_num_rows
 — Retourne le nombre de lignes dans un résultat
 http://bit.ly/2EvjMk1
+#### mysqli_connect_error
+— Retourne le message d'erreur de connexion MySQL
+http://bit.ly/2ogCXTM
+#### mysqli_connect_errno
+— Retourne le code d'erreur de la connexion MySQL
+http://bit.ly/2ECbdjj
 #### define
 — Définit une constante
 http://bit.ly/2HgCTw5
+#### die / exit
+— Affiche un message et termine le script courant
+http://bit.ly/2ok9kB7
+trim
+— Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
+http://bit.ly/2EUEIjM
+strip_tags
+— Supprime les balises HTML et PHP d'une chaîne
+http://bit.ly/2sIz3II
+htmlspecialchars
+— Convertit les caractères spéciaux en entités HTML
+http://bit.ly/2HvaSkp
