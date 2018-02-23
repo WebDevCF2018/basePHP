@@ -16,6 +16,13 @@ $sql = "SELECT l.*, a.nom, a.prenom, i.url
 // on effectue la requête
 $recup = mysqli_query($mysqli,$sql);
 
+// requête sql permettant de récupérer tous les auteurs pour le formulaire
+$sqlaut = "SELECT idauteur,nom,prenom FROM auteur
+	ORDER BY nom ASC;";
+
+// on effectue la requête
+$recup_auteur = mysqli_query($mysqli,$sqlaut);
+
 // on compte le nombre de ligne de résultat
 $compte = mysqli_num_rows($recup);
 
@@ -29,6 +36,29 @@ $compte = mysqli_num_rows($recup);
 <body>
 <h1>Nos livres</h1>
 <h2><a href="31-select.php">Retour</a> à l'accueil</h2>
+<form action="" method="post" name="lulu">
+    <label>Titre: </label><input type="text" name="letitre" required><br/>
+    <label>Parution: </label><input type="date" name="ladate" required><br/>
+    <label>Description: </label><textarea name="ladesc" required></textarea><br/>
+    <label>Auteur: </label><select name="lauteur" required>
+        <?php
+        while($auteur = mysqli_fetch_assoc($recup_auteur)) {
+            ?>
+            <option value="<?=$auteur['idauteur']?>"><?=$auteur['nom']?> <?=$auteur['prenom']?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <input type="submit" value="Envoyer">
+    <?php
+    // affiche le contenu du post que si non vide (vide par défaut)
+    if(!empty($_POST)) {
+        echo "<pre>";
+        var_dump($_POST);
+        echo "</pre>";
+    }
+    ?>
+</form>
 <?php
 // si on a pas encore de livre
 if($compte==0){

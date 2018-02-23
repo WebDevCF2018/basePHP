@@ -28,10 +28,17 @@ SELECT l.*, a.nom, a.prenom, i.url
 		INNER JOIN image i
 			ON l.idlivre = i.livre_idlivre;
 
-# sélectionnez tous les champs et entrées de livre en y ajoutant le nom et prenom de l'auteur correspondant et url venant de image, même si il n'y a pas d'image (NULL)!
+# sélectionnez tous les champs et entrées de livre en y ajoutant le nom et prenom de l'auteur correspondant et url venant de image, même si il n'y a pas d'image (NULL)! Jointure interne avec auteur (Lien entre livre et auteur obligatoire) 
+# FROM livre INNER JOIN auteur
+
+# Jointure externe avec image (Lien entre livre et image non obligatoire, le champs url devient null si pas d'image, les livres, se trouvant à gauche dans la liste d'instruction sql seront sélectionnés même sans image)
+# FROM livre LEFT JOIN image
 SELECT l.*, a.nom, a.prenom, i.url
 	FROM livre l
 		INNER JOIN auteur a
 			ON l.auteur_idauteur = a.idauteur
 		LEFT JOIN image i
 			ON l.idlivre = i.livre_idlivre;
+# sélectionnez le nom, le prenom et l'id de tous les auteurs classés par nom ascendant
+SELECT idauteur,nom,prenom FROM auteur
+	ORDER BY nom ASC;
