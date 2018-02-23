@@ -5,6 +5,8 @@ require_once "31-config.php";
 // connexion à la DB en mysqli procédural, arrêt en cas d'erreur de connexion
 require_once "mysqliconnect.php";
 
+//
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
