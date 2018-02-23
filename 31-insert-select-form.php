@@ -7,10 +7,10 @@ require_once "mysqliconnect.php";
 
 // requête sql qui va récupérer tous les 'livre' avec le 'nom' et 'prenom' de leur 'auteur' et l' 'url' de l'image
 $sql = "SELECT l.*, a.nom, a.prenom, i.url
-	        FROM livre l
+	FROM livre l
 		INNER JOIN auteur a
 			ON l.auteur_idauteur = a.idauteur
-		INNER JOIN image i
+		LEFT JOIN image i
 			ON l.idlivre = i.livre_idlivre;";
 
 // on effectue la requête
@@ -36,7 +36,14 @@ if($compte==0){
     while ($a = mysqli_fetch_assoc($recup)){
         ?>
     <h3><?=$a['titre']?></h3>
-    <img src="<?=$a['url']?>" width='100px' height='100px' alt='' />
+        <?php
+        // si on a une image ($a['url'] est différent (!) de vide (empty))
+        if(!empty($a['url'])) {
+            ?>
+            <img src="<?= $a['url'] ?>" width='100px' height='100px' alt=''/>
+            <?php
+        }
+        ?>
     <p><?=$a['description']?></p>
     <p>Ecrit en <?=substr($a['parution'],0,-6)?> par <?=$a['prenom']?> <?=$a['nom']?></p>
         <?php
