@@ -28,7 +28,7 @@ $compte = mysqli_num_rows($recup);
 </head>
 <body>
 <h1>Nos livres</h1>
-<h2><a href="31-select.php">Retour</a> à l'accueil</h2>
+<h2><a href="31-insert-select-form.php">Insérez</a> un livre</h2>
 <?php
 // si on a pas encore de livre
 if($compte==0){
