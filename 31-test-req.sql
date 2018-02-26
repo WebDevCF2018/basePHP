@@ -56,6 +56,56 @@ SELECT a.*, l.titre
 	FROM auteur a
 		LEFT JOIN livre l
         ON a.idauteur = l.auteur_idauteur;
+# VictorHugo a écrit 2 livres, on veut en garder qu'un, on utilise le GROUP BY, mais il nous manque un livre!
+SELECT a.*, l.titre
+	FROM auteur a
+		LEFT JOIN livre l
+        ON a.idauteur = l.auteur_idauteur
+	GROUP BY a.idauteur;
 
+# VictorHugo a écrit 2 livres, on veut en garder qu'un, on utilise le GROUP BY, mais il nous faut également un GROUP_CONTAT pour garder tous les livres de chaque auteur sous forme de liste
+SELECT a.*, GROUP_CONCAT(l.titre SEPARATOR "|||") AS titre
+	FROM auteur a
+		LEFT JOIN livre l
+        ON a.idauteur = l.auteur_idauteur
+	GROUP BY a.idauteur; 
+# idem 67 avec l'idlivre en plus
+SELECT  a.*, 
+		GROUP_CONCAT(l.idlivre) AS idlivre, 
+        GROUP_CONCAT(l.titre SEPARATOR "|||") AS titre
+	FROM auteur a
+		LEFT JOIN livre l
+        ON a.idauteur = l.auteur_idauteur
+	GROUP BY a.idauteur;
 
+# sélectionnez tous les champs de "livre" auxquels vous rajoutez "url" venant de "image" - jointure interne ! JOINTURE OBLIGATOIRE
+SELECT l.*, i.url
+	FROM livre l
+		INNER JOIN image i
+        ON l.idlivre = i.livre_idlivre;
+
+# sélectionnez tous les champs de "livre" auxquels vous rajoutez "url" venant de "image" - jointure externe ! JOINTURE NON OBLIGATOIRE. Ici les livres apparaîssent même sans images - livre LEFT JOIN image
+SELECT l.*, i.url
+	FROM livre l
+		LEFT JOIN image i
+        ON l.idlivre = i.livre_idlivre;
+
+# sélectionnez tous les champs de "livre" auxquels vous rajoutez "pseudo" venant de "auteur" - jointure interne ! JOINTURE OBLIGATOIRE       
+SELECT l.*, a.pseudo
+	FROM livre l 
+		INNER JOIN auteur a 
+        ON l.auteur_idauteur = a.idauteur;
+
+# idem 94 mais prendre que les livres parus après 1899 => WHERE puis on prend les 4 premiers caractères SUBSTR(chaine,1,4) (! en MySQL on commence à compter à 1 contrairement à la même fonction en PHP) > 1899
+SELECT l.*, a.pseudo
+	FROM livre l 
+		INNER JOIN auteur a 
+        ON l.auteur_idauteur = a.idauteur
+	WHERE SUBSTR(l.parution,1,4) > 1899;
+        
+# sélectionnez tous les champs de "livre" auxquels vous rajoutez "pseudo" venant de "auteur" - jointure externe ! JOINTURE NON OBLIGATOIRE - affiche l'auteur qui n'a pas de livre!          
+SELECT l.*, a.pseudo
+	FROM livre l 
+		RIGHT JOIN auteur a 
+        ON l.auteur_idauteur = a.idauteur;
 
