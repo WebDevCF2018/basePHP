@@ -52,6 +52,10 @@ SELECT a.*, l.titre
 		INNER JOIN livre l
         ON a.idauteur = l.auteur_idauteur;
 # idem 50 sauf qu'on veut les auteurs qui n'ont pas écrit de livre aussi
+SELECT a.*, l.titre
+	FROM auteur a
+		LEFT JOIN livre l
+        ON a.idauteur = l.auteur_idauteur;
 
 
 
