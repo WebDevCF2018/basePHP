@@ -40,5 +40,18 @@ SELECT l.*, a.nom, a.prenom, i.url
 		LEFT JOIN image i
 			ON l.idlivre = i.livre_idlivre;
 # sélectionnez le nom, le prenom et l'id de tous les auteurs classés par nom ascendant
-SELECT idauteur,nom,prenom FROM auteur
-	ORDER BY nom ASC;
+SELECT 
+    idauteur, nom, prenom
+FROM
+    auteur
+ORDER BY nom ASC;
+    
+# On prend tous les champs d'"auteur" et le titre de "livre", lorqu'il y a un lien entre eux
+SELECT a.*, l.titre
+	FROM auteur a
+		INNER JOIN livre l
+        ON a.idauteur = l.auteur_idauteur;
+# idem 50 sauf qu'on veut les auteurs qui n'ont pas écrit de livre aussi
+
+
+
