@@ -23,7 +23,7 @@ SELECT l.*, a.nom, a.prenom
 # sélectionnez tous les champs et entrées de livre en y ajoutant le nom et prenom de l'auteur correspondant et url venant de image
 SELECT l.*, a.nom, a.prenom, i.url
 	FROM livre l
-		INNER JOIN auteur a
+		INNER JOIN auteur a 
 			ON l.auteur_idauteur = a.idauteur
 		INNER JOIN image i
 			ON l.idlivre = i.livre_idlivre;
