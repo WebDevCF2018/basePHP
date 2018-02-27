@@ -3,6 +3,7 @@
 
 {% block body %}
 <h1>Tous les auteurs</h1>
-    {{ resultat }}
-<p>gt</p>
+    {% for i in resultat %}
+        <p>{{ i.nom }} {{i.prenom}}</p>
+    {% endfor %}
 {% endblock %}

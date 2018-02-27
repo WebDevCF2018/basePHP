@@ -10,7 +10,11 @@ require_once "modeles/mysqliconnect.php";
 $recup_auteurs = mysqli_query($mysqli,"SELECT * FROM auteur;");
 
 // tableau contant tous les auteurs
-$tous_auteurs = mysqli_fetch_object($recup_auteurs);
+$tous_auteurs = mysqli_fetch_all($recup_auteurs, MYSQLI_ASSOC);
+
+//echo "<pre>";
+//var_dump($tous_auteurs);
+//echo "</pre>";
 
 // appel de la vue
-echo $twig->render("auteurs.html.twig",array("resultat"=>"coucou"));
+echo $twig->render("auteurs.html.twig",array("resultat"=>$tous_auteurs));

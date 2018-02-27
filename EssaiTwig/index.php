@@ -13,9 +13,12 @@ require_once "vendor/autoload.php";
 $loader = new Twig_Loader_Filesystem('vues');
 
 // chargement de l'environnement et chemin vers le cache
-$twig = new Twig_Environment($loader, array(
-    'cache' => '/cache',
-));
+//$twig = new Twig_Environment($loader, array(
+//    'cache' => '/cache',
+//));
+
+// chargement de l'environnement twig sans cache
+$twig = new Twig_Environment($loader);
 
 // On va chercher un contrôleur enfant, ici le Public (on est pas admin)
 require_once "controleurs/PublicController.php";
