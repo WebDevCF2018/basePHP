@@ -32,4 +32,11 @@ SELECT c.*, a.titre AS titre_article
 		RIGHT JOIN categ_has_arti h
 			ON c.idcateg = h.categ_idcateg
 		RIGHT JOIN arti a
-			ON h.arti_idarti = a.idarti;            
+			ON h.arti_idarti = a.idarti; 
+            
+# Nous renvoie les 5 derniers articles de notre site (idarti, titre, 300 caractères de texte, publie)   
+
+SELECT idarti, titre, substr(texte,1,300) AS texte, publie  
+		FROM arti
+        ORDER BY publie DESC
+        LIMIT 5;
