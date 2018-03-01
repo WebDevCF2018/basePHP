@@ -57,3 +57,4 @@ exit
 trim
 strip_tags
 htmlspecialchars
+mysqli_fetch_all
