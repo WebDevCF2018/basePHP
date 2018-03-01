@@ -4,10 +4,10 @@
  */
 
 /*
- * renvoie : array indexé contenant un tableau associatif (Array) listeMenu( pas d'argument )
+ * renvoie : array indexé contenant un tableau associatif (Array) listeMenu( variable de connexion)
  * Nous renvoie les différentes rubriques dans l'ordre alphabétique de notre site (slug et titre)
  */
-function listeMenu(){
+function listeMenu($mysqli){
     $sql = "SELECT slug,titre FROM categ ORDER BY slug ASC;";
     $recup = mysqli_query($mysqli,$sql) or die("Erreur chargement menu");
     // on met dans un tableau associatif tous les résultats
