@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil du site</title>
+    <title>Catégorie: </title>
 </head>
 <body>
-<h1>Accueil</h1>
+<h1>Catégorie: </h1>
+<p>Description catégorie</p>
 <div id="menu">
     <?php
     include "vues/menu.php";
