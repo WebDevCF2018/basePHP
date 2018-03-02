@@ -51,7 +51,10 @@ SELECT a.idarti, a.titre, substr(a.texte,1,300) AS texte, a.publie
 		WHERE h.categ_idcateg=5
         ORDER BY a.publie DESC
         ;
-        
+# On récupère le titre et la description de la catégorie
+SELECT titre, description 
+			FROM categ
+            WHERE idcateg = 3;
         
         
         

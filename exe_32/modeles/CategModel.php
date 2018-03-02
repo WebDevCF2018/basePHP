@@ -14,3 +14,7 @@ function listeMenu($db){
     $sortie = mysqli_fetch_all($recup, MYSQLI_ASSOC);
     return $sortie;
 }
+/*
+ * renvoie : array associatif d'un élément ------ (variable de connexion, variable int de catégorie)
+ * Nous renvoie la rubrique de notre site grâce à son idcateg (titre et description)  ou false si pas de categ
+ */
