@@ -18,3 +18,16 @@ function listeMenu($db){
  * renvoie : array associatif d'un élément ------ (variable de connexion, variable int de catégorie)
  * Nous renvoie la rubrique de notre site grâce à son idcateg (titre et description)  ou false si pas de categ
  */
+function recupCategInfo($db,$id){
+    $id = (int) $id;
+    $sql = "SELECT titre, description 
+			FROM categ
+            WHERE idcateg = $id;";
+    $recup = mysqli_query($db,$sql);
+    $nb = mysqli_num_rows($recup); // 1 ou 0
+    if($nb){
+        return mysqli_fetch_assoc($recup);
+    }else{
+        return false;
+    }
+}

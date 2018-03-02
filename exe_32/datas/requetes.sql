@@ -55,6 +55,9 @@ SELECT a.idarti, a.titre, substr(a.texte,1,300) AS texte, a.publie
 SELECT titre, description 
 			FROM categ
             WHERE idcateg = 3;
+		
+# On récupère l'article complet grâce à son id
+SELECT * FROM arti WHERE idarti = 2;
         
         
         

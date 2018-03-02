@@ -25,6 +25,7 @@ $pour_menu = listeMenu($mysqli);
 $articles = listeArtiCateg($mysqli, $idcateg);
 
 // on récupère le titre et la description de la catégorie
+$detailCateg = recupCategInfo($mysqli,$idcateg);
 
 // on prend la vue
 require_once "vues/Categ.html.php";
