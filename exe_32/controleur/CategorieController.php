@@ -13,7 +13,7 @@ $idcateg = (int) $_GET["c"];
 // si on a tenté de nous attaquer
 if($idcateg===0){
     // on redirige vers un site externe avec header("location: url d'un site")
-    header("Location: https://fr.wiktionary.org/wiki/connard");
+    header("Location: https://fr.wiktionary.org/wiki/d%C3%A9chet");
     die();
 }
 
@@ -21,8 +21,8 @@ if($idcateg===0){
 // on récupère le menu depuis CategModel
 $pour_menu = listeMenu($mysqli);
 
-// on récupère tous les articles de la catégories
-//$articles = listeArtiCateg($mysqli);
+// on récupère tous les articles de la catégorie
+$articles = listeArtiCateg($mysqli, $idcateg);
 
 
 // on prend la vue

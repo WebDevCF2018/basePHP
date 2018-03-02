@@ -22,3 +22,30 @@ function listeArtiAccueil($db){
         return false;
     }
 }
+
+/*
+ * renvoie : array indexé contenant un tableau associatif (Array) listeArtiCateg( variable de connexion, id de la categ)
+ * Nous renvoie tous les articles de notre catégorie (idarti, titre, 300 caractères de texte, publie), si pas d'articles renvoie false
+ */
+function listeArtiCateg($db,$idc){
+    $idc = (int) $idc; // mode parano, on veut être certain que $idc ne permet pas une injection sql en le transformant en entier
+
+    $sql = "SELECT a.idarti, a.titre, substr(a.texte,1,300) AS texte, a.publie  
+		FROM arti a
+        # jointure pour avoir les idcategs
+        INNER JOIN categ_has_arti h
+			ON h.arti_idarti = a.idarti
+        # lorsque la catégorie se trouve dans la table jointure    
+		WHERE h.categ_idcateg=$idc
+        ORDER BY a.publie DESC
+        ;";
+    $recup = mysqli_query($db,$sql);
+    // on prends le nombre de résultat(s)
+    $nb = mysqli_num_rows($recup);
+    // si on a au moins 1 résultat ($nb == true)
+    if($nb){
+        return mysqli_fetch_all($recup, MYSQLI_ASSOC);
+    }else{
+        return false;
+    }
+}

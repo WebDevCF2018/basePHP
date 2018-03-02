@@ -40,3 +40,19 @@ SELECT idarti, titre, substr(texte,1,300) AS texte, publie
 		FROM arti
         ORDER BY publie DESC
         LIMIT 5;
+        
+# Nous renvoie tous les articles de notre catégorie (idarti, titre, 300 caractères de texte, publie)
+SELECT a.idarti, a.titre, substr(a.texte,1,300) AS texte, a.publie  
+		FROM arti a
+        # jointure pour avoir les idcategs
+        INNER JOIN categ_has_arti h
+			ON h.arti_idarti = a.idarti
+        # lorsque la catégorie se trouve dans la table jointure    
+		WHERE h.categ_idcateg=5
+        ORDER BY a.publie DESC
+        ;
+        
+        
+        
+        
+        
