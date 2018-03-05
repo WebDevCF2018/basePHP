@@ -51,6 +51,10 @@ function listeArtiCateg($db,$idc){
     }
 }
 
+/*
+ * renvoie : array associatif d'un élément listeArtiComplet (variable de connexion, variable int d'article)
+ * Nous renvoie l'article complet de notre site grâce à son id plus les champs idcateg et titrecateg,  ou false si pas d'article
+ */
 function listeArtiComplet($db,$idartic){
     $idartic = (int) $idartic;
     $sql = "SELECT  a.titre, a.texte, a.publie, 
