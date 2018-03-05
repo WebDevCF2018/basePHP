@@ -59,3 +59,5 @@ strip_tags
 htmlspecialchars
 mysqli_fetch_all
 settype
+gettype
+explode
