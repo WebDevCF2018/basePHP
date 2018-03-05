@@ -58,7 +58,29 @@ SELECT titre, description
 		
 # On récupère l'article complet grâce à son id
 SELECT * FROM arti WHERE idarti = 2;
+
+# On joint les idcateg et titre de categ aux résultats même si ils ne sont pas présents 
+SELECT a.idarti, a.titre, substr(a.texte,1,300) AS texte, a.publie, 
+		GROUP_CONCAT(c.idcateg) AS idcateg, GROUP_CONCAT(c.titre SEPARATOR '|||') AS titrecateg  
+		FROM arti a
+			LEFT JOIN categ_has_arti h 
+				ON h.arti_idarti = a.idarti
+			LEFT JOIN categ c 
+				ON h.categ_idcateg = c.idcateg
+        GROUP BY a.idarti
+        ORDER BY a.publie DESC
+        LIMIT 5;
         
         
-        
+ # On joint les idcateg et titre de categ au résultat même si ils ne sont pas présents 
+SELECT  a.titre, a.texte, a.publie, 
+		GROUP_CONCAT(c.idcateg) AS idcateg, 
+        GROUP_CONCAT(c.titre SEPARATOR '|||') AS titrecateg  
+		FROM arti a
+			LEFT JOIN categ_has_arti h 
+				ON h.arti_idarti = a.idarti
+			LEFT JOIN categ c 
+				ON h.categ_idcateg = c.idcateg
+        WHERE a.idarti = 1
+;       
         

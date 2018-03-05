@@ -6,7 +6,7 @@
 /*
  * renvoie : array indexé contenant un tableau associatif (Array) listeArtiAccueil( variable de connexion)
  * Nous renvoie les 5 derniers articles de notre site (idarti, titre, 300 caractères de texte, publie), si pas d'articles renvoie false
- * 2 ) et les categ.titre clicables pour chaque article, l'article aparaît même si il n'a pas de categ
+ * 2 ) et les categ.titre clicables vers "?c="categ.idcateg pour chaque article, l'article aparaît même si il n'a pas de categ
  */
 function listeArtiAccueil($db){
     $sql = "SELECT idarti, titre, substr(texte,1,300) AS texte, publie  
@@ -46,6 +46,29 @@ function listeArtiCateg($db,$idc){
     // si on a au moins 1 résultat ($nb == true)
     if($nb){
         return mysqli_fetch_all($recup, MYSQLI_ASSOC);
+    }else{
+        return false;
+    }
+}
+
+function listeArtiComplet($db,$idartic){
+    $idartic = (int) $idartic;
+    $sql = "SELECT  a.titre, a.texte, a.publie, 
+		GROUP_CONCAT(c.idcateg) AS idcateg, 
+        GROUP_CONCAT(c.titre SEPARATOR '|||') AS titrecateg  
+		FROM arti a
+			LEFT JOIN categ_has_arti h 
+				ON h.arti_idarti = a.idarti
+			LEFT JOIN categ c 
+				ON h.categ_idcateg = c.idcateg
+        WHERE a.idarti = $idartic
+; ";
+    $recup = mysqli_query($db,$sql);
+    // on prends le nombre de résultat(s)
+    $nb = mysqli_num_rows($recup);
+    // si on a au moins 1 résultat ($nb == true)
+    if($nb){
+        return mysqli_fetch_assoc($recup);
     }else{
         return false;
     }

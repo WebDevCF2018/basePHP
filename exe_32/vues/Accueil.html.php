@@ -22,6 +22,7 @@
         foreach ($articles AS $item) {
             ?>
             <h3><a href="?a=<?= $item['idarti'] ?>"><?= $item['titre'] ?></a></h3>
+            <!-- ici le foreach pour les categ -->
             <h4><a href="?c=1">Categ1</a> - <a href="?c=2">Categ2</a></h4>
             <p><?= $item['texte'] ?> ... <a href="?a=<?= $item['idarti'] ?>">Lire la suite</a></p>
             <p><?= $item['publie'] ?></p>
