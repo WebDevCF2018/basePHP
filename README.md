@@ -115,6 +115,9 @@ http://bit.ly/2sqYIpl
 #### mysqli_fetch_assoc
 — Récupère une ligne de résultat sous forme de tableau associatif
 http://bit.ly/2F1hOFi
+#### mysqli_fetch_all
+— Lit toutes les lignes de résultats dans un tableau
+http://bit.ly/2FUAkj3
 #### mysqli_num_rows
 — Retourne le nombre de lignes dans un résultat
 http://bit.ly/2EvjMk1
@@ -139,3 +142,12 @@ http://bit.ly/2sIz3II
 #### htmlspecialchars
 — Convertit les caractères spéciaux en entités HTML
 http://bit.ly/2HvaSkp
+#### settype
+— Affecte un type à une variable
+http://bit.ly/2I0zjqh
+#### gettype
+— Retourne le type de la variable
+http://bit.ly/2CYMggz
+#### explode
+— Coupe une chaîne en segments
+http://bit.ly/2D0FWoA
