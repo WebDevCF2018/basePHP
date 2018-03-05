@@ -13,6 +13,8 @@
 </div>
 <div id="contenu">
     <?php
+
+
     // pas d'articles
     if ($articles == false) {
         echo "<h2>Pas encore d'articles!</h2>";
@@ -20,6 +22,7 @@
         foreach ($articles AS $item) {
             ?>
             <h3><a href="?a=<?= $item['idarti'] ?>"><?= $item['titre'] ?></a></h3>
+            <h4><a href="?c=1">Categ1</a> - <a href="?c=2">Categ2</a></h4>
             <p><?= $item['texte'] ?> ... <a href="?a=<?= $item['idarti'] ?>">Lire la suite</a></p>
             <p><?= $item['publie'] ?></p>
             <hr>

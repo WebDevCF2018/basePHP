@@ -6,6 +6,7 @@
 /*
  * renvoie : array indexé contenant un tableau associatif (Array) listeArtiAccueil( variable de connexion)
  * Nous renvoie les 5 derniers articles de notre site (idarti, titre, 300 caractères de texte, publie), si pas d'articles renvoie false
+ * 2 ) et les categ.titre clicables pour chaque article, l'article aparaît même si il n'a pas de categ
  */
 function listeArtiAccueil($db){
     $sql = "SELECT idarti, titre, substr(texte,1,300) AS texte, publie  
