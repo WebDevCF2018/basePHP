@@ -9,9 +9,16 @@
  * 2 ) et les categ.titre clicables vers "?c="categ.idcateg pour chaque article, l'article aparaît même si il n'a pas de categ
  */
 function listeArtiAccueil($db){
-    $sql = "SELECT idarti, titre, substr(texte,1,300) AS texte, publie  
-		FROM arti
-        ORDER BY publie DESC
+    $sql = "SELECT a.idarti, a.titre, SUBSTRING(a.texte,1,300) AS texte, a.publie, 
+		GROUP_CONCAT(c.idcateg) AS idcateg, 
+        GROUP_CONCAT(c.titre SEPARATOR '|||') AS titrecateg  
+		FROM arti a
+			LEFT JOIN categ_has_arti h 
+				ON h.arti_idarti = a.idarti
+			LEFT JOIN categ c 
+				ON h.categ_idcateg = c.idcateg
+		GROUP BY a.idarti
+		ORDER BY a.publie DESC
         LIMIT 5;";
     $recup = mysqli_query($db,$sql);
     // on prends le nombre de résultat(s)
