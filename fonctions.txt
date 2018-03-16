@@ -66,3 +66,4 @@ mysqli_affected_rows
 header
 ctype_digit
 mail
+filter_var
