@@ -118,6 +118,9 @@ http://bit.ly/2F1hOFi
 #### mysqli_num_rows
 — Retourne le nombre de lignes dans un résultat
 http://bit.ly/2EvjMk1
+#### mysqli_affected_rows
+— Retourne le nombre de lignes affectées par la dernière opération MySQL
+http://bit.ly/2FZtDPa
 #### mysqli_connect_error
 — Retourne le message d'erreur de connexion MySQL
 http://bit.ly/2ogCXTM
@@ -139,3 +142,15 @@ http://bit.ly/2sIz3II
 #### htmlspecialchars
 — Convertit les caractères spéciaux en entités HTML
 http://bit.ly/2HvaSkp
+#### header
+— Envoie un en-tête HTTP (par exemple redirection)
+http://bit.ly/2pmhb2v
+#### ctype_digit
+— Vérifie qu'une chaîne est un entier
+http://bit.ly/2phw9FX
+#### mail
+— Envoi de mail
+http://bit.ly/2pk6xbp
+#### filter_var
+— Filtre une variable avec un filtre spécifique
+http://bit.ly/2Iw3Pbw
