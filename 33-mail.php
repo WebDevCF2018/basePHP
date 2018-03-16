@@ -17,10 +17,24 @@ if (isset($_POST['votreMail'],
         // vérification si nos variables sont valides avant d'envoyer
     if($mail==true && !empty($title) && !empty($text)){
 
+        // création de notre entête pour que le mail soit valide (moins de chance d'arriver dans le spam)
+        $entete = "From: $mail" . "\r\n" .
+            "Reply-To: $mail" . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        // envoie du mail au format texte dans notre boite mail
+        $envoi = @mail(NOTRE_MAIL,"CF2m - ".$title, $text, $entete);
+        // si envoi ok
+        if($envoi){
+            $message = "Votre message a bien été envoyé";
+        }else{
+            $message = "Echec inconnu lors de l'envoi, veuillez recommencer!";
+        }
+
     // variable(s) non valide(s)
     }else{
         // création d'une variable d'erreur
-        $erreur = "Champs non valides, veuillez recommencer!";
+        $message = "Champs non valides, veuillez recommencer!";
     }
 
 }
@@ -37,7 +51,7 @@ if (isset($_POST['votreMail'],
 <p>Mail au format texte envoyé vers votre email</p>
 <form name="enTexte" action="" method="POST">
     <?php
-    if(isset($erreur)) echo "<h3>$erreur</h3>";
+    if(isset($message)) echo "<h3>$message</h3>";
     ?>
     <input type="email" name="votreMail" placeholder="Merci de rentrer votre mail" required><br/>
 
