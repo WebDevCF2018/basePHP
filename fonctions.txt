@@ -62,3 +62,7 @@ settype
 gettype
 explode
 nl2br
+mysqli_affected_rows
+header
+ctype_digit
+mail
