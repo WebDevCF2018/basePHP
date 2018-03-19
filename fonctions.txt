@@ -67,3 +67,4 @@ header
 ctype_digit
 mail
 filter_var
+in_array
