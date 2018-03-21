@@ -18,7 +18,13 @@ if(!isset($_SESSION["clef"])||$_SESSION["clef"]!=session_id()){
 <body>
 <h1>Page 1</h1>
 <?php
+include "menu.php";
+?>
+<h2>Bienvenue à <?=$_SESSION['nom']?></h2>
+<pre>
+<?php
 var_dump($_SESSION);
 ?>
+</pre>
 </body>
 </html>
