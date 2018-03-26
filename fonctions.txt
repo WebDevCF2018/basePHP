@@ -61,3 +61,10 @@ mysqli_fetch_all
 settype
 gettype
 explode
+nl2br
+mysqli_affected_rows
+header
+ctype_digit
+mail
+filter_var
+in_array

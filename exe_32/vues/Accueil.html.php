@@ -23,7 +23,17 @@
             ?>
             <h3><a href="?a=<?= $item['idarti'] ?>"><?= $item['titre'] ?></a></h3>
             <!-- ici le foreach pour les categ -->
-            <h4><a href="?c=1">Categ1</a> - <a href="?c=2">Categ2</a></h4>
+            <?php
+            // on coupe les résultats liés aux categ en les transformant en tableau indexé grâce au delimiter
+            $idcateg = explode(",", $item['idcateg']);
+            $titrecateg = explode("|||", $item['titrecateg']);
+                echo "<h4>";
+                foreach($titrecateg AS $key => $values){
+                    echo "<a href='?c={$idcateg[$key]}'>$values</a> ";
+                }
+                echo "</h4>";
+            ?>
+
             <p><?= $item['texte'] ?> ... <a href="?a=<?= $item['idarti'] ?>">Lire la suite</a></p>
             <p><?= $item['publie'] ?></p>
             <hr>
