@@ -17,6 +17,8 @@ $menu = new Menu($PDO);
 </div>
 <div id="content">
     <pre><?php
+
+        var_dump($menu->getSortie());
     var_dump($menu->getDatas());
     ?></pre>
 </div>

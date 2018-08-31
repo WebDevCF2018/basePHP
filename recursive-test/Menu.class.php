@@ -7,6 +7,7 @@ class Menu
     private $datas;
     private $sortie;
     private $level=0;
+    private $parent=0;
     private $idNow=0;
 
     // public constructor
@@ -14,10 +15,11 @@ class Menu
     {
         $this->setDb($dbase);
         $this->setDatas($this->recupAll());
+        $this->createMenu();
     }
 
     private function recupAll(){
-        $recup = $this->db->query("SELECT * FROM categs;");
+        $recup = $this->db->query("SELECT * FROM categs ORDER BY niveau ASC;");
         return $recup->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -28,18 +30,28 @@ class Menu
 
         foreach ($this->getDatas() as $values) {
 
-            if (is_array($values)) {
+            $this->setIdNow($values['id']);
+            $this->setLevel($values['niveau']);
 
-                // recursive
-                $this->createMenu($values);
+            $this->setSortie("<li>");
 
-            } else {
-                // item <li></li>
-                $this->setSortie("<li>" . $values . "</li>");
+            if($this->getParent()<$this->getLevel()) {
+                $this->setLevel($this->getIdNow());
+                $this->setSortie("<ul>");
+                $this->setSortie($this->createMenu());
+                $this->setParent($this->getLevel());
+            }else {
+        $this->setSortie($values['titre']);
+                $this->setParent($this->getLevel());
+
+                $this->setSortie("</ul>");
+
             }
+
         }
-        // last close ul
+        $this->setSortie("<li>");
         $this->setSortie("</ul>");
+
     }
 
     // public getter
@@ -65,7 +77,7 @@ class Menu
         $this->db = $db;
     }
 
-    private function getDatas()
+    public function getDatas()
     {
         return $this->datas;
     }
@@ -93,6 +105,16 @@ class Menu
     private function setIdNow($idNow)
     {
         $this->idNow = $idNow;
+    }
+
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
     }
 
 
