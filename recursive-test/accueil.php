@@ -13,7 +13,7 @@ $menu = new Menu($PDO);
 <body>
 <h1>Menu</h1>
 <div id="menu">
-    <nav></nav>
+    <nav><?=$menu->getSortie()?></nav>
 </div>
 <div id="content">
     <pre><?php
