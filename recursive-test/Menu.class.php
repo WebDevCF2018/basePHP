@@ -6,8 +6,6 @@ class Menu {
     private $db;
     private $datas;
     private $sortie;
-    private $level = 0;
-    private $idNow = 0;
 
 // public constructor
     public function __construct(PDO $dbase) {
@@ -29,7 +27,7 @@ class Menu {
           'niveau' => string '0' (length=1)
           'ordre' => null
          */
-        $niveau_precedent=0;
+        $niveau_precedent = 0;
         $this->setSortie("<ul>");
 
         foreach ($array as $values) {
@@ -39,27 +37,29 @@ class Menu {
                     $this->setSortie("<li>\n");
                 }
 
-                if ($parent < $niveau)
-                    $this->setSortie( "<ul>");
+                if ($parent < $niveau) {
+                    $this->setSortie("<ul>");
+                }
 
-                if ($values['niveau'] != 0)
+                if ($values['niveau'] != 0) {
                     $this->setSortie("<li>");
+                }
 
-                if ($values['niveau'] == 0)
+                if ($values['niveau'] == 0) {
                     $this->setSortie("<a href='#'>" . $values['titre'] . "</a>");
-                else
+                } else {
                     $this->setSortie("<a href='#'>" . $values['titre'] . "</a>");
-
+                }
                 $niveau_precedent = $niveau;
 
                 $this->createMenu($values['id'], ($niveau + 1), $array);
 
-                if ($niveau == 0 && $niveau_precedent == 0)
+                if ($niveau == 0 && $niveau_precedent == 0) {
                     $this->setSortie("</li>\n");
+                }
             }
-
         }
-$this->setSortie("</ul>\n");
+        $this->setSortie("</ul>\n");
     }
 
 // public getter
@@ -86,30 +86,6 @@ $this->setSortie("</ul>\n");
 
     private function setDatas($datas) {
         $this->datas = $datas;
-    }
-
-    private function getLevel() {
-        return $this->level;
-    }
-
-    private function setLevel($level) {
-        $this->level = $level;
-    }
-
-    private function getIdNow() {
-        return $this->idNow;
-    }
-
-    private function setIdNow($idNow) {
-        $this->idNow = $idNow;
-    }
-
-    public function getParent() {
-        return $this->parent;
-    }
-
-    public function setParent($parent) {
-        $this->parent = $parent;
     }
 
 }
